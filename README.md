@@ -9,20 +9,37 @@ The standard loupe functions have been gas-optimized in this implementation and 
 ## Installation
 
 1. Clone this repo:
-```console
-git clone git@github.com:mudgen/diamond-3-hardhat.git
+
+2. create .env file like below
+```
+AMOY_API_KEY_URL= https://polygon-amoy.g.alchemy.com/v2/YOUR_API_KEY
+PRIVATE_KEY= METAMASK_OR_WALLET_PRIVATE_KEY
+API_TOKEN= ETHERSCAN_API_KEY
+
 ```
 
-2. Install NPM packages:
-```console
-cd diamond-3-hardhat
-npm install
-```
+3. Install NPM packages:
+npm install or yarn 
+
 
 ## Deployment
 
 ```console
-npx hardhat run scripts/deploy.js
+npx hardhat run scripts/deploy.js --network <YOUR_NETWORK>
+```
+
+## Verification
+
+```console
+npx hardhat verify --network amoy DEPLOYED_CONTRACT_ADDRESS "constructorArg1" "constructorArg2"
+
+```
+
+## Updation
+
+```console
+npx hardhat run scripts/upgrade.js --network amoy
+
 ```
 
 ### How the scripts/deploy.js script works
